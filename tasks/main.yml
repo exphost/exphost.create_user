@@ -1,0 +1,23 @@
+- block:
+  - name: create home base dir
+    file:
+      path: "{{user.home | dirname}}"
+      state: directory
+  - name: create group
+    group:
+      name: "{{user.group}}"
+  - name: create user
+    user:
+      name: "{{user.user}}"
+      groups: "{{user.group}}"
+      password: "{{user.password|default(omit)}}"
+      home: "{{user.home|default(omit)}}"
+
+  - name: copy ssh-keys
+    authorized_key:
+      user: "{{user.user}}"
+      state: present
+      key: "{{lookup('file', item)}}"
+    loop: "{{lookup('fileglob', '../files/ssh-keys/'+user.user+'/*', wantlist=True)}}"
+
+  become: True
