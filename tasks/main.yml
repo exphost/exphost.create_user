@@ -18,6 +18,6 @@
       user: "{{user.user}}"
       state: present
       key: "{{lookup('file', item)}}"
-    loop: "{{lookup('fileglob', '../files/ssh-keys/'+user.user+'/*', wantlist=True)}}"
+    loop: "{{lookup('fileglob', FABSIBLE_CWD|default('..')+'/files/ssh-keys/'+user.user+'/*', wantlist=True)}}"
 
   become: True
