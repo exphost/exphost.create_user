@@ -5,7 +5,7 @@
       state: directory
   - name: create group
     group:
-      name: "{{user.group}}"
+      name: "{{user.group.split(",")[0]}}"
   - name: create user
     user:
       name: "{{user.user}}"
