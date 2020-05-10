@@ -6,10 +6,12 @@
   - name: create group
     group:
       name: "{{user.group.split(',')[0]}}"
+      gid: "{{user.gid|default(omit)}}"
   - name: create user
     user:
       name: "{{user.user}}"
       groups: "{{user.group}}"
+      uid: "{{user.uid|default(omit)}}"
       password: "{{user.password|default(omit)}}"
       home: "{{user.home|default(omit)}}"
 
