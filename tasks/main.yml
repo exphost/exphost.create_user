@@ -24,4 +24,6 @@
     loop_control:
       loop_var: key
 
+  ignore_errors: "{{ignore_erros|default(False)}}"
+  ignore_unreachable: "{{ignore_unreachable|default(False)}}"
   become: True
