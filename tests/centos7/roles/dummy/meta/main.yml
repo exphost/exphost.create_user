@@ -1,0 +1,27 @@
+dependencies:
+  - role: exphost.create_user
+    user:
+      user: user1
+      uid: 2000
+      group: user1
+      gid: 2000
+  - role: exphost.create_user
+    user:
+      user: user2
+      uid: 2001
+      group: user2
+      gid: 2001
+      home: /home/zzzz
+  - role: exphost.create_user
+    user:
+      user: user3
+      uid: 2002
+      group: user3
+      gid: 2002
+      password: "$6$mysecretsalt$MIJffjeQyfrKKrGkprGrDL/g2mCJa53koLmYQuuLmY9y37pDvGKPXU1Ov3RbMi.tpQ9cWvxAzUVtBLe7KrZoU."
+  - role: exphost.create_user
+    user:
+      user: user4
+      uid: 2004
+      group: user4
+      gid: 2004
