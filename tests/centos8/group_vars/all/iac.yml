@@ -1,5 +1,5 @@
 iac:
-  name: create_user-test-centos7-{{ lookup('env', 'BUILD_NUMBER')|default("no_build_number", true) }}
+  name: create_user-test-centos8-{{ lookup('env', 'BUILD_NUMBER')|default("no_build_number", true) }}
   hosts:
     test:
       count: 1
