@@ -1,1 +1,3 @@
-../.shared/ssh_config
+Host *
+    StrictHostKeyChecking no
+
