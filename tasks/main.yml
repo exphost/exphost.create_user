@@ -10,6 +10,7 @@
   - name: create user
     user:
       name: "{{user.user}}"
+      group: "{{user.group.split(',')[0]}}"
       groups: "{{user.group}}"
       uid: "{{user.uid|default(omit)}}"
       password: "{{user.password|default(omit)}}"
