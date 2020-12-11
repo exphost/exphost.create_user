@@ -3,6 +3,7 @@
     file:
       path: "{{ user.home | dirname }}"
       state: directory
+      mode: 0755
   - name: create group
     group:
       name: "{{ user.group.split(',')[0] }}"
