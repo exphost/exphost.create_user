@@ -15,5 +15,5 @@ galaxy_info:
     - fabsible
     - user
 
-allow_duplicates: True
+allow_duplicates: true
 dependencies: []
