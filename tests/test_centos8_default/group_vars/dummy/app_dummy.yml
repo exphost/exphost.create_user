@@ -1,0 +1,5 @@
+apps_dummy:
+  dummy:
+    dummy:
+      type: dummy
+      enabled: True
