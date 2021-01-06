@@ -40,3 +40,11 @@ def test_user4(host):
 #        assert authorized.is_file
 #        assert authorized.contains("ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDZDxIASdx2QeV/6Qm+Y3VzFl9FB5Bjh4YH/9KrrUrOERnVHgSUuLt87D2rjB6R+r3j+eVsTXFrWFr3wLUAbjU+z922jSKOXiTa9XStUj4DTjkSLXTwTqjCabdKEt1g53wvzSHMH5LQCDhvyj3rQXqq+aw+qwSVJdY2Y/d/MuB0tOi61+j8A7/Oo8wVQPj1QVHLxcORrzZwSi4b1/tjn6jk/2q1vKgmlCxaeyDK+htf9IP8W+Kmwp8BUvzlDXrntAijOXmuc2DQopc4sQ4XYiBaiTZ2bvtu+mY2mLZSba4zLws1uLEfvawSdXDjnFdy1CgYgYeJYMqWl0AmnPIqkF4428LawbEDOX2VzNGjR+CcrON/GC3LOIAjKFVMSSIImgzLtSz60cN9rIdggp7w2GA03NdQ7khlNTPRrh7RbLnt2obcbUzRRQ2dWoSD9RqVueYmtWhN8YH2Cy2bLtVtkDBN6YKo+dSdoJ69yit+WeD+e/ldI/ORRUp6WCvTFiOqwqc= torgiren@redraptor")
 
+def test_ssh_generation(host):
+    assert host.ansible(
+      "stat",
+      "path=/home/user1/.ssh/id_rsa",
+      become=True,
+      check=False,
+    )['stat']['isreg']
+

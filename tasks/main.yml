@@ -18,6 +18,7 @@
       uid: "{{ user.uid|default(omit) }}"
       password: "{{ user.password|default(omit) }}"
       home: "{{ user.home|default(omit) }}"
+      generate_ssh_key: true
 
   - name: copy ssh-keys
     authorized_key:
